@@ -1,10 +1,9 @@
-FILESEXTRAPATHS_prepend = "${THISDIR}/files:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-UBOOT_MACHINE = "nitrogen6q_defconfig"
-SRC_URI += "file://imx6q-extra-config"
+SRC_URI += "file://imx6ull-extra-config"
 
 do_configure_prepend() {
-	cat ${WORKDIR}/imx6q-extra-config >> ${WORKDIR}/git/configs/${UBOOT_MACHINE}
+	cat ${WORKDIR}/imx6ull-extra-config >> ${WORKDIR}/git/configs/${UBOOT_MACHINE}
 }
 
 do_concat_dtb_append (){
