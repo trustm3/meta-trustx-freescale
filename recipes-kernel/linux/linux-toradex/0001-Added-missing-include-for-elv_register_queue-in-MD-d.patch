@@ -1,0 +1,21 @@
+From 07e8ceb43dafe4996e40babd698cabbdbbc83f40 Mon Sep 17 00:00:00 2001
+From: Your Name <you@example.com>
+Date: Thu, 9 Jan 2020 12:06:34 +0100
+Subject: [PATCH] Added missing include for elv_register_queue in MD driver
+
+---
+ drivers/md/dm-rq.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/md/dm-rq.c b/drivers/md/dm-rq.c
+index eadfcfd106ff..ebc48788bb6c 100644
+--- a/drivers/md/dm-rq.c
++++ b/drivers/md/dm-rq.c
+@@ -9,6 +9,7 @@
+ 
+ #include <linux/elevator.h> /* for rq_end_sector() */
+ #include <linux/blk-mq.h>
++#include "../../block/blk.h" /* for elv_register_queue() */
+ 
+ #define DM_MSG_PREFIX "core-rq"
+ 
