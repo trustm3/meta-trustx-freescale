@@ -1,5 +1,5 @@
 SRC_URI += "file://trustx.cfg \
-            file://imx6ull.cfg \
+            file://imx8x.cfg \
             "
 
 SRCREV_meta = "aafb8f095e97013d6e55b09ed150369cbe0c6476"
@@ -11,7 +11,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 do_preconfigure () {
         cat ${WORKDIR}/trustx.cfg >> ${WORKDIR}/defconfig
-        cat ${WORKDIR}/imx6ull.cfg >> ${WORKDIR}/defconfig
+        cat ${WORKDIR}/imx8x.cfg >> ${WORKDIR}/defconfig
 }
 
 addtask do_preconfigure after do_patch before do_configure
