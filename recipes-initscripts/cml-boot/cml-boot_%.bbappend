@@ -3,4 +3,5 @@
 do_install_prepend() {
 	sed -i '/exec > \/dev\/$LOGTTY*/c\#exec > \/dev\/$LOGTTY' ${WORKDIR}/cml-boot-script.stub
 	sed -i '/exec 2>&1*/c\#exec 2>&1' ${WORKDIR}/cml-boot-script.stub
+        echo "exec /sbin/getty 115200 -H 'trustx-cml' $LOGTTY" >> ${WORKDIR}/cml-boot-script.stub
 }
