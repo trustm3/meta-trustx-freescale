@@ -1,12 +1,12 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += "file://imx6ull-extra-config"
 
-# do_configure_prepend() {
+# do_configure:prepend() {
 #	cat ${WORKDIR}/imx6ull-extra-config >> ${WORKDIR}/git/configs/${UBOOT_MACHINE}
 # }
 
-# do_concat_dtb_append (){
+# do_concat_dtb:append (){
 #        if [ "x${UBOOT_SIGN_ENABLE}" = "x1" ]; then
 #                if [ "x${UBOOT_SUFFIX}" = "ximx" ] && [ -e "${DEPLOY_DIR_IMAGE}/${UBOOT_DTB_IMAGE}" ]; then
 #                        cd ${B}

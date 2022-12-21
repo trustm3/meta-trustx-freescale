@@ -2,7 +2,7 @@ SRC_URI += "file://trustx.cfg \
             file://${MACHINE}.cfg \
             "
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 do_preconfigure () {
         cat ${WORKDIR}/trustx.cfg >> ${WORKDIR}/defconfig

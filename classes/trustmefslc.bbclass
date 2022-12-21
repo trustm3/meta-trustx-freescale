@@ -38,7 +38,7 @@ do_fslc_bootpart () {
 }
 
 
-IMAGE_CMD_trustmefslc () {
+IMAGE_CMD:trustmefslc () {
 	bbnote  "Using standard trustme partition"
 	do_fslc_bootpart
 	do_build_trustmeimage
