@@ -1,17 +1,3 @@
-SRC_URI += "file://trustx.cfg \
-            file://${MACHINE}.cfg \
-            "
-
-SRCREV_meta = "aafb8f095e97013d6e55b09ed150369cbe0c6476"
-SRC_URI:append += "\
-                   git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-5.4;destsuffix=kernel-meta \
-                   "
-
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-do_preconfigure () {
-        cat ${WORKDIR}/trustx.cfg >> ${WORKDIR}/defconfig
-        cat ${WORKDIR}/${MACHINE}.cfg >> ${WORKDIR}/defconfig
-}
-
-addtask do_preconfigure after do_patch before do_configure
+SRC_URI += "file://${MACHINE}.cfg"
