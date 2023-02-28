@@ -5,7 +5,6 @@ MACHINEOVERRIDES =. "use-head-next:"
 PREFERRED_PROVIDER_virtual/kernel:apalis-imx8 = "linux-toradex"
 #COMPATIBLE_MACHINE = "apalis-imx8"
 
-INITRAMFS_IMAGE_BUNDLE = "0"
 INITRAMFS_IMAGE = "trustx-cml-initramfs"
 
 TRUSTME_HARDWARE = "arm"
