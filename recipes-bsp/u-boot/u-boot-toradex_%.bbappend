@@ -1,6 +1,6 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRC_URI += "file://imx6ull-extra-config"
+SRC_URI += "file://imx6ull-extra-config.cfg"
 
 # do_configure:prepend() {
 #	cat ${WORKDIR}/imx6ull-extra-config >> ${WORKDIR}/git/configs/${UBOOT_MACHINE}
