@@ -5,6 +5,13 @@ MACHINEOVERRIDES =. "use-head-next:"
 PREFERRED_PROVIDER_virtual/kernel:apalis-imx8 = "linux-toradex"
 #COMPATIBLE_MACHINE = "apalis-imx8"
 
+# see meta-freescale/conf/machine/include/imx-base.inc for
+# MACHINE_SOCARCH_SUFFIX and fsl-dynamic-packagearch. We set
+# these explicitly as it is not set correctly for container
+# build (MACHINE==qemuarm64) automatically.
+MACHINE_SOCARCH_SUFFIX = "-mx8"
+INHERIT += "fsl-dynamic-packagearch"
+
 INITRAMFS_IMAGE = "trustx-cml-initramfs"
 
 TRUSTME_HARDWARE = "arm"
