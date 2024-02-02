@@ -18,6 +18,7 @@ IMAGE_BOOT_FILES:tqma8mpxl = "${KERNEL_DEPLOYSUBDIR}/fitImage-trustx-cml-initram
 WKS_FILE:tqma8mpxl = "tqma8mpxl.wks.in"
 
 # keys name in keydir (eg. "dev.crt", "dev.key")
+# no verified boot yet
 #UBOOT_SIGN_KEYDIR = "${TOPDIR}/test_certificates/"
 #UBOOT_SIGN_ENABLE = "1"
 #UBOOT_SIGN_KEYNAME = "ssig_subca"
