@@ -1,0 +1,27 @@
+From 1fc3840222bdc1a82dd18f28e4563e69e22266df Mon Sep 17 00:00:00 2001
+From: Johannes Wiesboeck <johannes.wiesboeck@aisec.fraunhofer.de>
+Date: Mon, 29 Jan 2024 13:00:07 +0100
+Subject: [PATCH] include/configs/tqma8mpxl: Increase maximum bootm size
+
+Increase maximum size for kernel image from default 8M to 64M to fit
+the gyroidos kernel image.
+
+Signed-off-by: Johannes Wiesboeck <johannes.wiesboeck@aisec.fraunhofer.de>
+---
+ include/configs/tqma8mpxl.h | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/include/configs/tqma8mpxl.h b/include/configs/tqma8mpxl.h
+index e6896c24c2..3714d95de3 100644
+--- a/include/configs/tqma8mpxl.h
++++ b/include/configs/tqma8mpxl.h
+@@ -285,6 +285,9 @@
+ /* Size of malloc() pool */
+ #define CONFIG_SYS_MALLOC_LEN		SZ_64M
+ 
++/* Increase max gunzip size */
++#define CONFIG_SYS_BOOTM_LEN		SZ_64M
++
+ #if defined(CONFIG_CMD_MEMTEST)
+ /*
+  * Use alternative / extended memtest,
