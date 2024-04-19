@@ -1,0 +1,29 @@
+#!/bin/sh
+set -e
+
+SYMLINK_DEV_BOOTLOADER=/dev/bootloader
+
+check_started() {
+        [ -e $SYMLINK_DEV_BOOTLOADER ] && return 0 || return 1
+}
+
+case "${1}" in
+  start)
+        check_started && exit 0
+
+	# assume bootloader is instlled on the same block
+	# device as the boot partition is located, e.g. mmcblk1p1
+        bootpart=$(df /boot | awk 'END {print $1}')
+        bootdev=/dev/$(lsblk -no PKNAME $bootpart)
+	loopdev=$(losetup --offset ##IMX_BOOT_SEEK##K --sizelimit $((##GYROIDOS_RAW_BOOT_END##-##IMX_BOOT_SEEK##))K --find --show $bootdev)
+
+	# symlink the newly created loopdev to /dev/bootloader
+	# to have a stable identifier
+        ln -s $loopdev $SYMLINK_DEV_BOOTLOADER
+        ;;
+  status)
+        check_started && echo "ON" || echo "OFF"
+        ;;
+  *)
+        ;;
+esac
