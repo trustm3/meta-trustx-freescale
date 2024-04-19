@@ -17,6 +17,7 @@ KERNEL_IMAGETYPE:tqma8mpxl = "fitImage"
 IMAGE_BOOT_FILES:tqma8mpxl = "${KERNEL_DEPLOYSUBDIR}/fitImage-trustx-cml-initramfs-${MACHINE}-${MACHINE};fitImage-trustx-cml-initramfs"
 WKS_FILE:tqma8mpxl = "tqma8mpxl.wks.in"
 
+UBOOT_CONFIG = "sd"
 # keys name in keydir (eg. "dev.crt", "dev.key")
 # no verified boot yet
 #UBOOT_SIGN_KEYDIR = "${TOPDIR}/test_certificates/"
