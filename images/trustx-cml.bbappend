@@ -26,6 +26,7 @@ UPDATE_FILES="${UPDATE_OUT_GENERIC} ${UPDATE_OUT_GENERIC}.conf ${UPDATE_OUT_GENE
 
 do_sign_guestos:prepend () {
         mkdir -p "${UPDATE_OUT}"
+        cp "${DEPLOY_DIR_IMAGE}/${MACHINE_WKS_BOOTSTREAM}" "${UPDATE_OUT}/bootloader.img"
         cp "${DEPLOY_DIR_IMAGE}/cml-kernel/${KERNEL_IMAGETYPE}-trustx-cml-initramfs-${MACHINE}-${MACHINE}" "${UPDATE_OUT}/kernel.img"
         cp "${DEPLOY_DIR_IMAGE}/trustx-cml-firmware-${MACHINE}.squashfs" "${UPDATE_OUT}/firmware.img"
         cp "${DEPLOY_DIR_IMAGE}/trustx-cml-modules-${MACHINE}.squashfs" "${UPDATE_OUT}/modules.img"
