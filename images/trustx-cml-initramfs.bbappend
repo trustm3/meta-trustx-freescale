@@ -1,1 +1,1 @@
-PACKAGE_INSTALL:tqma8mpxl += "bootloader-loopdev"
+PACKAGE_INSTALL:append:tqma8mpxl = " bootloader-loopdev"
