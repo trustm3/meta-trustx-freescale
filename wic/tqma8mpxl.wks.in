@@ -21,6 +21,6 @@ part u-boot-env --no-table --offset 4096K --fixed-size 32K
 part u-boot-envr --no-table --offset 4128K --fixed-size 32K
 part resvd --no-table --offset 4160K --fixed-size 4032K
 part /boot --source bootimg-partition --fstype=vfat --label boot --active --offset 8M --size 64M
-part / --source rootfs --fstype=ext4 --label trustme --align 4096 --extra-space ${TRUSTME_DATAPART_EXTRA_SPACE}M
+part / --source rootfs --fstype=ext4 --label gyroidos --align 4096 --extra-space ${GYROIDOS_DATAPART_EXTRA_SPACE}M
 
 bootloader --ptable msdos
