@@ -12,12 +12,12 @@ PREFERRED_PROVIDER_virtual/kernel:apalis-imx8 = "linux-toradex"
 MACHINE_SOCARCH_SUFFIX = "-mx8"
 INHERIT += "fsl-dynamic-packagearch"
 
-INITRAMFS_IMAGE = "trustx-cml-initramfs"
+INITRAMFS_IMAGE = "gyroidos-cml-initramfs"
 
-TRUSTME_HARDWARE = "arm"
-TRUSTME_LOGTTY = "ttyLP1"
-TRUSTME_CONTAINER_ARCH = "qemuarm64"
-TRUSTME_FSTYPES = "trustmefslc"
+GYROIDOS_HARDWARE = "arm"
+GYROIDOS_LOGTTY = "ttyLP1"
+GYROIDOS_CONTAINER_ARCH = "qemuarm64"
+GYROIDOS_FSTYPES = "gyroidosfslc"
 
 BBMULTICONFIG = "container"
 PACKAGE_CLASSES = "package_ipk"
